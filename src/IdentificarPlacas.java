@@ -8,36 +8,35 @@ public class IdentificarPlacas {
         Map<String, String> stateAbbreviations = new HashMap<>();
 
         // ESTADO DO ACRE
-        stateAbbreviations.put("ACRE", "MZN");
-        stateAbbreviations.put("ACRE", "NAG");
-        stateAbbreviations.put("ACRE", "NXR");
-        stateAbbreviations.put("ACRE", "NXT");
-        stateAbbreviations.put("ACRE", "OVG");
-        stateAbbreviations.put("ACRE", "QLU");
-        stateAbbreviations.put("ACRE", "QLZ");
-        stateAbbreviations.put("ACRE", "OXP");
-        stateAbbreviations.put("ACRE", "OWM");
-        stateAbbreviations.put("ACRE", "QWQ");
-        
+        stateAbbreviations.put("MZN", "ACRE");
+        stateAbbreviations.put("NAG", "ACRE");
+        stateAbbreviations.put("NXR", "ACRE");
+        stateAbbreviations.put("NXT", "ACRE");
+        stateAbbreviations.put("OVG", "ACRE");
+        stateAbbreviations.put("QLU", "ACRE");
+        stateAbbreviations.put("QLZ", "ACRE");
+        stateAbbreviations.put("OXP", "ACRE");
+        stateAbbreviations.put("OWM", "ACRE");
+        stateAbbreviations.put("QWQ", "ACRE");
+
         // ESTADO DO AMAZONAS
-        stateAbbreviations.put("AMAZONAS", "JWF");
-        stateAbbreviations.put("AMAZONAS", "JXY");
-        stateAbbreviations.put("AMAZONAS", "NOI");
-        stateAbbreviations.put("AMAZONAS", "NPB");
-        stateAbbreviations.put("AMAZONAS", "OAA");
-        stateAbbreviations.put("AMAZONAS", "OAO");
-        stateAbbreviations.put("AMAZONAS", "OXM");
-        stateAbbreviations.put("AMAZONAS", "QZA");
-        stateAbbreviations.put("AMAZONAS", "QZZ");
-        
+        stateAbbreviations.put("JWF", "AMAZONAS");
+        stateAbbreviations.put("JXY", "AMAZONAS");
+        stateAbbreviations.put("NOI", "AMAZONAS");
+        stateAbbreviations.put("NPB", "AMAZONAS");
+        stateAbbreviations.put("OAA", "AMAZONAS");
+        stateAbbreviations.put("OAO", "AMAZONAS");
+        stateAbbreviations.put("OXM", "AMAZONAS");
+        stateAbbreviations.put("QZA", "AMAZONAS");
+        stateAbbreviations.put("QZZ", "AMAZONAS");
+
         // ESTADO DE RONDÔNIA
-        stateAbbreviations.put("RONDÔNIA", "NBB"); 
-        stateAbbreviations.put("RONDÔNIA", "NEH"); 
-        stateAbbreviations.put("RONDÔNIA", "OXL"); 
-        stateAbbreviations.put("RONDÔNIA", "QRA");
-        stateAbbreviations.put("RONDÔNIA", "QTA");  
-        stateAbbreviations.put("RONDÔNIA", "QTJ"); 
-        
+        stateAbbreviations.put("NBB", "RONDÔNIA");
+        stateAbbreviations.put("NEH", "RONDÔNIA");
+        stateAbbreviations.put("OXL", "RONDÔNIA");
+        stateAbbreviations.put("QRA", "RONDÔNIA");
+        stateAbbreviations.put("QTA", "RONDÔNIA");
+        stateAbbreviations.put("QTJ", "RONDÔNIA");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -47,11 +46,11 @@ public class IdentificarPlacas {
         // Extrai as 3 primeiras letras da placa
         String plateSequence = licensePlate.substring(0, 3);
 
-        // Verifica se a placa corresponde a abreviação do estado
+        // Verifica se a placa corresponde à abreviação do estado
         boolean found = false;
         for (Map.Entry<String, String> entry : stateAbbreviations.entrySet()) {
-            if (entry.getValue().equals(plateSequence)) {
-                System.out.println("O veículo é do estado de " + entry.getKey());
+            if (entry.getKey().equals(plateSequence)) {
+                System.out.println("O veículo é do estado de " + entry.getValue());
                 found = true;
                 break;
             }
